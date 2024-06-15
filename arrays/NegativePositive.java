@@ -16,13 +16,20 @@ public class NegativePositive {
     
     static void sortNegativePositive(int arr[]){
 
-        for(int i=0; i<arr.length-1; i++){
-            for(int j=i+1; j<arr.length; j++){
-                if(arr[i]>arr[j]){
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
+        int i = 0, j=arr.length-1;
+
+        while(i<j){
+            if (arr[i]>0 && arr[j]<0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j--;
+            }
+            else if(arr[j]>0){
+                j--;
+            }else if(arr[i]<0){
+                i++;
             }
         }
 
