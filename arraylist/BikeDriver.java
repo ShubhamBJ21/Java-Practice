@@ -24,11 +24,11 @@ class Bike implements Comparable<Bike> {
     @Override
     public int compareTo(Bike b) {
         if (this.price > b.price) {
-            return 1;
+            return 1;                                //swap(object1, object2)
         } else if (this.price < b.price) {
-            return -1;
-        } else {
-            return 0;
+            return -1;                               //do not swap
+        } else {  
+            return 0;                               //both are equal
         }
     }
 }
