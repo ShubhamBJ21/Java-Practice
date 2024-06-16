@@ -26,6 +26,10 @@ class Car {
         return mileage;
     }
 
+    public String getBrand(){
+        return brand;
+    }
+
     public String toString() {
         return "[Brand: " + brand + " Price: " + price + " Mileage: " + mileage + " Colour: " + color + "] ";
     }
@@ -45,7 +49,12 @@ public class CarDriver {
 
         System.out.println("-----------------------------");
         System.out.println("Sort car using mileage");
-        sortByPrice(car);
+        sortByMileage(car);
+
+        System.out.println("-----------------------------");
+        System.out.println("Sort car using Brand");
+        sortByBrand(car);
+
     }
 
     public static void sortByPrice(List<Car> car) {
@@ -70,6 +79,7 @@ public class CarDriver {
     }
 
     public static void sortByMileage(List<Car> car) {
+
         Comparator<Car> c1 = new Comparator<Car>() {
 
             public int compare(Car o1, Car o2) {
@@ -82,6 +92,22 @@ public class CarDriver {
                 }
             }
 
+        };
+
+         Collections.sort(car, c1);
+
+        for (Car sortCar : car) {
+            System.out.println(sortCar);
+        }
+    }
+
+    public static void sortByBrand(List<Car> car){
+
+        Comparator<Car> c1  = new Comparator<Car>() {
+            
+            public int compare(Car o1, Car o2){
+                return o1.getBrand().compareTo(o2.getBrand());
+            }
         };
 
         Collections.sort(car, c1);
