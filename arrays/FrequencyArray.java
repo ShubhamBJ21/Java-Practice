@@ -1,3 +1,5 @@
+/* count frequecy of given element from an array */
+
 package arrays;
 
 public class FrequencyArray {
